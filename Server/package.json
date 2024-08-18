@@ -15,7 +15,7 @@
     "vitest": "^2.0.5"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
      "build": "npm install"
   }
 }
