@@ -10,7 +10,7 @@ const app = express();
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://url-fetcher-git-master-dorb99s-projects.vercel.app/",
+    "https://url-fetcher-git-master-dorb99s-projects.vercel.app",
   ],
 };
 
