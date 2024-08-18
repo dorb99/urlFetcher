@@ -5,6 +5,7 @@
   text-align: center;
   box-sizing: border-box;
   min-height: 100vh;
+  margin-bottom: 20px;
 }
 
 .error-message {

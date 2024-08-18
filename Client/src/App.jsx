@@ -15,7 +15,6 @@ const App = () => {
     setError("");
     setMetadata([]);
     setLoading(true);
-
     try {
       const response = await axios.post(
         "http://localhost:5000/fetch-metadata",
@@ -36,10 +35,11 @@ const App = () => {
     <div className="app-container">
       <h1>URL Fetcher</h1>
       <FormContainer submitUrls={submitUrls} />
-      {error && <div  className="error-message">{error}</div>}
+      {error && <div title="errorMessage" className="error-message">{error}</div>}
       {loading ? <Loader /> : <MetaDisplayer metadata={metadata} />}
     </div>
   );
 };
 
-export default App;
+export {App};
+
