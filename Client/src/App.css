@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
