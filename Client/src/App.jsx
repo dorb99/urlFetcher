@@ -16,7 +16,9 @@ const App = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/fetch-metadata",
+        // Uncomment the following when running locally
+        // "http://localhost:3000/fetch-metadata",
+        "https://urlfetcherserver-93d9382076d0.herokuapp.com/",
         { urls }
       );
       setMetadata(response.data);
