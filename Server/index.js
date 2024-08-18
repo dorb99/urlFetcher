@@ -8,7 +8,10 @@ import { fetcher } from "./src/Controller.js";
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://url-fetcher-git-master-dorb99s-projects.vercel.app/",
+  ],
 };
 
 app.use(express.json());
@@ -27,7 +30,7 @@ app.post("/fetch-metadata", async (req, res) => {
   res.json(metadata);
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
