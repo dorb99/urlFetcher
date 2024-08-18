@@ -8,7 +8,7 @@ const metascraper = _metascraper([title(), image(), description()]);
 
 export async function fetcher(urls) {
   const results = [];
-  // Fetch metadata for each URL
+  
   for (const url of urls) {
     try {
       const {

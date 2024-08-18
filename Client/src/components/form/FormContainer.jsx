@@ -4,15 +4,13 @@ import "./FormContainer.css";
 function FormContainer({ submitUrls }) {
   const [urls, setUrls] = useState(["", "", ""]);
 
-  // Update URL in the list based on index
-  const handleUrlChange = (index, value) => {
+  const updateUrl = (index, value) => {
     const newUrls = [...urls];
     newUrls[index] = value;
     setUrls(newUrls);
   };
 
-  // Add or remove URL fields
-  const handleUrlList = (action) => {
+  const updateUrlList = (action) => {
     const newUrls = [...urls];
     if (action === "add") {
       newUrls.push("");
@@ -22,7 +20,6 @@ function FormContainer({ submitUrls }) {
     setUrls(newUrls);
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     submitUrls(urls);
@@ -38,7 +35,7 @@ function FormContainer({ submitUrls }) {
             type="text"
             value={url}
             placeholder={`Enter URL ${index + 1}`}
-            onChange={(e) => handleUrlChange(index, e.target.value)}
+            onChange={(e) => updateUrl(index, e.target.value)}
             required
           />
         ))}
@@ -46,11 +43,11 @@ function FormContainer({ submitUrls }) {
           <button
             className="btn"
             type="button"
-            onClick={() => handleUrlList("add")}
+            onClick={() => updateUrlList("add")}
           >
             Add Url
           </button>
-          <button className="btn" type="button" onClick={handleUrlList}>
+          <button className="btn" type="button" onClick={updateUrlList}>
             Remove Url
           </button>
           <button className="btn" type="submit">

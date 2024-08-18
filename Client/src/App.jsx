@@ -10,8 +10,7 @@ const App = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Function to handle metadata fetching
-  const submitUrls = async (urls) => {
+  const fetchMetadata = async (urls) => {
     setError("");
     setMetadata([]);
     setLoading(true);
@@ -34,7 +33,7 @@ const App = () => {
   return (
     <div className="app-container">
       <h1>URL Fetcher</h1>
-      <FormContainer submitUrls={submitUrls} />
+      <FormContainer submitUrls={fetchMetadata} />
       {error && <div title="errorMessage" className="error-message">{error}</div>}
       {loading ? <Loader /> : <MetaDisplayer metadata={metadata} />}
     </div>

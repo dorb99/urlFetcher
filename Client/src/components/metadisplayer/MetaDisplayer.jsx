@@ -2,7 +2,7 @@ import React from "react";
 import "./MetaDisplayer.css";
 
 function MetaDisplayer({ metadata }) {
-  // Making the grid responsive to the urls
+  
   const columnClass = metadata.length % 3 === 0 ? "three-columns" : "two-columns";
   
     return (
@@ -17,7 +17,7 @@ function MetaDisplayer({ metadata }) {
               </div>
             ))}
         </div>
-      ) : null}
+      ) : <p>Please insert website urls</p>}
     </>
   );
 }
