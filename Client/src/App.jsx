@@ -19,7 +19,7 @@ const App = () => {
       // Using the local server if the client is locally too.
         window.location.hostname === "localhost"
           ? "http://localhost:3000/fetch-metadata"
-          : "https://url-fetcher-git-master-dorb99s-projects.vercel.app/fetch-metadata";
+          : "https://urlfetcherserver-93d9382076d0.herokuapp.com/fetch-metadata";
 
       const response = await axios.post(serverUrl, { urls });
       setMetadata(response.data);
