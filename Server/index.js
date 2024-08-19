@@ -16,9 +16,9 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(helmet());
-app.use(cors(corsOptions));
 
 const limiter = rateLimit({
   windowMs: 1000,
