@@ -10,10 +10,10 @@ const app = express();
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://url-fetcher-git-master-dorb99s-projects.vercel.app"
+    "https://url-fetcher-f7x6kehok-dorb99s-projects.vercel.app",
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 app.use(express.json());
