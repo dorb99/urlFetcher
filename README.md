@@ -45,7 +45,7 @@ The application displays the results on the front-end, providing a user-friendly
     ```bash
     cd ../server
     npm install
-    node server.js
+    node index.js
     ```
 
 4. **Running Tests:**
