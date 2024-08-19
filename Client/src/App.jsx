@@ -15,18 +15,16 @@ const App = () => {
     setMetadata([]);
     setLoading(true);
     try {
-      const response = await axios.post(
-        // Uncomment the following when running locally
-        // "http://localhost:3000/fetch-metadata",
+      const serverUrl =
+      // Using the local server if the client is locally too.
+        window.location.hostname === "localhost"
+          ? "http://localhost:3000/fetch-metadata"
+          : "https://url-fetcher-git-master-dorb99s-projects.vercel.app/fetch-metadata";
 
-        "https://urlfetcherserver-93d9382076d0.herokuapp.com/fetch-metadata",
-        { urls }
-      );
+      const response = await axios.post(serverUrl, { urls });
       setMetadata(response.data);
     } catch (err) {
-      setError(
-        "Failed to fetch metadata. Please check the URLs and try again"
-      );
+      setError("Failed to fetch metadata. Please check the URLs and try again");
       console.log(err);
     } finally {
       setLoading(false);
@@ -37,11 +35,14 @@ const App = () => {
     <div className="app-container">
       <h1>URL Fetcher</h1>
       <FormContainer submitUrls={fetchMetadata} />
-      {error && <div title="errorMessage" className="error-message">{error}</div>}
+      {error && (
+        <div title="errorMessage" className="error-message">
+          {error}
+        </div>
+      )}
       {loading ? <Loader /> : <MetaDisplayer metadata={metadata} />}
     </div>
   );
 };
 
-export {App};
-
+export { App };
