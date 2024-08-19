@@ -9,8 +9,8 @@ const app = express();
 
 const corsOptions = {
   origin: [
-    "http://localhost:5173",
-    "https://urlfetcherserver-93d9382076d0.herokuapp.com"
+    "localhost:5173",
+    "https://url-fetcher-git-master-dorb99s-projects.vercel.app"
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
